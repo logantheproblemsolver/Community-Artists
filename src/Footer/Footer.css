@@ -1,0 +1,24 @@
+
+@media screen and (min-width: 350px) {
+    .footer {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 5em;
+        background-color: gray;
+        justify-content: center;
+        position: relative;
+        bottom: 0;
+    }
+
+    .footerLabel {
+        padding-right: 1em;
+    }  
+}
+
+@media screen and (min-width: 750px) {
+    .footer {
+        bottom: -7em;
+        justify-content: flex-end;
+    }
+}

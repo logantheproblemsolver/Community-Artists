@@ -1,0 +1,27 @@
+.uploadArtwork {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: auto;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5em;
+    margin-bottom: 5em;
+}
+
+form input {
+    margin-bottom: 1em;
+    border: solid 1px black;
+    margin-left: .5em;
+}
+
+form button {
+    width: auto;
+    margin-bottom: 20px;
+}
