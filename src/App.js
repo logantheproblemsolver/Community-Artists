@@ -12,8 +12,8 @@ class App extends React.Component {
     return (
       <div>
         <NavBar />
-        <Route exact path="/UploadArtwork" component={UploadArtwork} />
         <Route exact path="/" component={LandingPage} />
+        <Route exact path="/UploadArtwork" component={UploadArtwork} />
         <Route exact path="/ShowArtwork" component={ShowArtwork} />
         <Footer />
       </div>

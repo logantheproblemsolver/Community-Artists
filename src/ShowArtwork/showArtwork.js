@@ -1,18 +1,57 @@
 import React, {Component} from 'react';
-import RandomImage from'./randomimage.jpg';
+import ArtworkData from './ArtworkData/artworkData'
+import config from '../config';
 import './showArtwork.css';
 
 
 class ShowArtwork extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            artwork: [],
+            error: null,
+        }
+    }
+
+    setArtwork = artwork => {
+        this.setState({
+            artwork,
+            error: null
+        })
+    }
+
+
+    componentDidMount() {
+        const APIEndpoint = config.API_ENDPOINT
+        const artworkEndpoint = '/showartwork'
+        const url = APIEndpoint + artworkEndpoint;
+        
+        fetch(url, {
+            method: 'GET',
+            headers: {
+                'content-type': 'application/json'
+            }
+        })
+            .then(
+                res => {
+                    if(!res.ok) {
+                        return res.json().then(error => Promise.reject(error))
+                    }
+                    return res.json()
+                })
+            .then(this.setArtwork)
+            .catch(error => {
+                console.error(error)
+                this.setState({error})
+            })
+
+
+    }
+
     render() {
         return (
             <div className="showArtwork">
-                <h1>Artist's Work</h1>
-                <img src={RandomImage} alt="artist's artwork" />
-                <p>Artwork Title</p>
-                <p>Name of the Artist</p>
-                <p>Price of Artwork</p>
-                <p>Description of Artwork</p>
+                <ArtworkData artworkdata={this.state.artwork} />
             </div>
         )
     }
