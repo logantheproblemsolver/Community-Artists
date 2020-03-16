@@ -67,16 +67,7 @@ class UploadArtwork extends Component {
         submit.preventDefault();
         let myForm = document.getElementById('form')
         const formData = new FormData(myForm);
-        // const {image, title, artist_name, price, description} = submit.target
-        // const uploadedArtwork = {
-        //     image: image.files[0],
-        //     title: title.value,
-        //     artist_name: artist_name.value,
-        //     price: price.value,
-        //     description: description.value
-        // }
 
-        // const formattedUpload = JSON.stringify(uploadedArtwork)
         const request = {
             headers: {
                 'content-type': 'application/json'
