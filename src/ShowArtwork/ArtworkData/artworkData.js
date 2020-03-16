@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 
 
 
+
 class ArtworkData extends Component {
     render() {
 
@@ -10,7 +11,7 @@ class ArtworkData extends Component {
 
             return (
                 <div key={i}>
-                    <img src={artwork.image} alt="artist's artwork" />
+                    <img src={artwork.image} alt="artist's artwork" className="artworkImages"/>
                     <p>{artwork.title}</p>
                     <p>{artwork.artist_name}</p>
                     <p>{artwork.price}</p>

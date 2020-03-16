@@ -10,3 +10,8 @@
     margin-top: 35px;
     margin-bottom: 35px;
 }
+
+.artworkImages {
+    max-height: 400px;
+    max-width: 500px;
+}
