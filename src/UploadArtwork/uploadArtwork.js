@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import config from '../config'
+import axios from 'axios'
 import './uploadArtwork.css'
 
 
@@ -17,20 +18,21 @@ class UploadArtwork extends Component {
     }
 
     onImageChange = image => {
-        const types = ['imag/png', 'image/jpeg', 'image/jpg']
+        const types = ['image/jpeg', 'image/jpg']
         let file = image.target.files
 
-        console.log(file[0].type)
         if (types.every(type => file[0].type !== type)) {
             this.setState({
-                error: 'File must be either .png, .jpeg, or .jpg'
+                error: 'File must be either .jpeg, or .jpg'
             })
         } else {
-            let encodedImage = btoa(file[0])
+
             this.setState({
-                image: encodedImage
+                image: file[0]
             })
+ 
         }
+
     }
 
     onTitleChange = title => {
@@ -63,41 +65,41 @@ class UploadArtwork extends Component {
 
     onSubmit = submit => {
         submit.preventDefault();
-        const {title, artist_name, price, description} = submit.target
-        const uploadedArtwork = {
-            image: this.state.image,
-            title: title.value,
-            artist_name: artist_name.value,
-            price: price.value,
-            description: description.value
-        }
+        let myForm = document.getElementById('form')
+        const formData = new FormData(myForm);
+        // const {image, title, artist_name, price, description} = submit.target
+        // const uploadedArtwork = {
+        //     image: image.files[0],
+        //     title: title.value,
+        //     artist_name: artist_name.value,
+        //     price: price.value,
+        //     description: description.value
+        // }
 
-        console.log(uploadedArtwork)
-
-        const url = config.API_ENDPOINT + '/uploadArtwork'
-
-        fetch(url, {
-            method: 'POST',
-            body: JSON.stringify(uploadedArtwork),
+        // const formattedUpload = JSON.stringify(uploadedArtwork)
+        const request = {
             headers: {
                 'content-type': 'application/json'
             }
-        })
-        .then(res => {
-            if (!res.ok) {
-              return res.json().then(error => Promise.reject(error))
-            }
-            return res.json()
-        })
-        .then(data => {
-            console.log(data)
-        })
-        .catch(error => {
-            this.setState({
-                error: error
-            })
-        })
+        };
+        const url = config.API_ENDPOINT + '/uploadArtwork'
 
+        axios.post(url, formData, request)
+            .then(res => {
+                if (!res.ok) {
+                    return res.json().then(error => Promise.reject(error))
+                  }
+                  return res.json()
+            })
+            .then(data => {
+                alert("The file is successfully uploaded");
+                console.log(data)
+            })
+            .catch(error => {
+                this.setState({
+                    error: error
+                })
+        });
     }
 
 
@@ -107,9 +109,9 @@ class UploadArtwork extends Component {
                 <div className="error">
                     {this.state.error}
                 </div>
-                <form className="form" onSubmit={e => this.onSubmit(e)} >
-                    <label> Upload File: 
-                    <input type="file" name="file" onChange={e => this.onImageChange(e)} required/>
+                <form className="form" id="form" onSubmit={e => this.onSubmit(e)} >
+                    <label htmlFor="image"> Upload File: 
+                    <input type="file" name="image" onChange={e => this.onImageChange(e)} required/>
                     </label> 
                     <label htmlFor="title">
                         Artwork Title:
