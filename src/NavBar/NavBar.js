@@ -32,7 +32,7 @@ class NavBar extends Component {
                 <h1 className="title left"><Link to="/">Community Artists</Link></h1>
                 <ul className={`${showList ? "nav-menu" : "nav-menu hidden"}`}>
                     <li className="nav-list" id="uploadArtwork"><Link to="/UploadArtwork">Upload Artwork</Link></li>
-                    <li className="nav-list" id="showArtwork"><Link to="/ShowArtwork">Show Uploaded Art</Link></li>
+                    <li className="nav-list" id="showArtwork"><Link to="/ShowArtwork">Show Artwork</Link></li>
                 </ul>
                 <div className="nav-toggle">
                     <HamburgerMenu
@@ -41,6 +41,7 @@ class NavBar extends Component {
                         width={18}
                         height={15}
                         animationDuration={.1}
+                        className="hamburger"
                     />     
                 </div>
 

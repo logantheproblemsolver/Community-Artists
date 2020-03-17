@@ -1,9 +1,11 @@
 * {
   box-sizing: border-box;
+  background-color: #F4F2F3;
 }
 
 
 .mainApp {
   background-color: #F4F2F3;
+  height: 100%;
 }
 

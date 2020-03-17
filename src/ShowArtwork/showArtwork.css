@@ -1,27 +1,37 @@
-.showArtwork {
-    display: grid;
-    grid-template-columns: 45% 45%;
-    grid-template-columns: repeat(2, 1f);
-    width: 100%;
-    margin-bottom: 35px;
-    margin-top: 50px;
+@media screen and (min-width: 300px) {
+    *{
+        padding: 0;
+    }
+    .artwork {
+        display: grid;
+        font-family: 'Ubuntu', sans-serif;
+        grid-template-columns: 100%;
+        margin-top: 35px;
+        grid-gap: 2em;
+    }
+    .showArtwork p {
+        margin-top: 35px;
+        margin-bottom: 35px;
+    }
+    .artworkImages {
+        /* max-height: 100%; */
+        max-width: 85%;
+        box-shadow: 2px 4px 10px 4px #3B3B38;
+    }
+    .artworkImageSection {
+        text-align: center;
+        font-weight: bolder;
+    }
+
 }
-
-.showArtwork p {
-    margin-top: 35px;
-    margin-bottom: 35px;
-}
-
-
-.artworkImages {
-    max-height: 400px;
-    max-width: 500px;
-}
-
-
-.artworkImageSection {
-    text-align: center;
-    font-weight: bolder;
-}
-
+    
+    
+    @media(min-width: 750px) {
+        .artwork {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            margin-top: 35px;
+            grid-gap: 2em;
+        }
+    }
 

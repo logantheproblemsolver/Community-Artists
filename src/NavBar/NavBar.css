@@ -1,9 +1,9 @@
 @media screen and (min-width: 300px) {
     nav {
+    font-family: 'Arvo', serif;
     display: flex;
     flex-direction: row;
     background-color: #94B7AF;
-    border-bottom: solid 1px black;
     align-items: center;
     width: 100%;
     height: 5em;
@@ -12,14 +12,17 @@
     .title {
         justify-content: flex-start;
         margin: unset;
-        font-size: 26px;
+        font-size: 1.5em;
         padding-left: 1em;
+        background-color: #94B7AF;
+
     }
     
     .nav-toggle {
         cursor: pointer;
         position: absolute;
         right: 2em;
+        
     }
 
 
@@ -39,18 +42,34 @@
 
     .nav-list {
         margin-bottom: .5em;
+        background-color: #94B7AF;
+
     }
 
     .hidden {
         display: none;
     }
 
+    .nav-toggle div {
+        background-color: #94B7AF;
+    }
+
     nav a {
         text-decoration: unset;
+        background-color: #94B7AF;
+
     }
 
     nav a:visited {
         color: black;
+    }
+
+    nav a:hover {
+        font-size: 1.1em;
+    }
+
+    .title:hover {
+        font-size: 2em;
     }
 
 }

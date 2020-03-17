@@ -1,6 +1,7 @@
 
 @media screen and (min-width: 350px) {
     .footer {
+        font-family: 'Arvo', serif;
         display: flex;
         align-items: center;
         width: 100%;
@@ -13,12 +14,24 @@
 
     .footerLabel {
         padding-right: 1em;
+        background-color: #7C858E;
     }  
+
+    .footerLabel input {
+        border: solid 1px gray;
+        border-right: none;
+    }
+
+    .footerLabel button {
+        box-shadow: none;
+        border: solid 1px gray;
+        
+    }
 }
 
 @media screen and (min-width: 750px) {
     .footer {
-        bottom: -7em;
+        bottom: -10em;
         justify-content: flex-end;
     }
 }
