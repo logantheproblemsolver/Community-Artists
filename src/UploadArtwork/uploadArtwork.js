@@ -18,22 +18,13 @@ class UploadArtwork extends Component {
     }
 
     onImageChange = image => {
-        const types = ['image/jpeg', 'image/jpg']
         let file = image.target.files
-
-        if (types.every(type => file[0].type !== type)) {
-            this.setState({
-                error: 'File must be either .jpeg, or .jpg'
-            })
-        } else {
-
-            this.setState({
-                image: file[0]
-            })
- 
-        }
-
+        this.setState({
+            image: file[0]
+        })
     }
+
+
 
     onTitleChange = title => {
         title.preventDefault();
@@ -102,8 +93,10 @@ class UploadArtwork extends Component {
                     {this.state.error}
                 </div>
                 <form className="form" id="form" onSubmit={e => this.onSubmit(e)} >
-                    <label htmlFor="image"> Upload File: 
-                    <input type="file" name="image" onChange={e => this.onImageChange(e)} required/>
+                    <label htmlFor="image"> Choose Image: 
+                    <input type="file" name="image" 
+                    accept="image/*"
+                    onChange={e => this.onImageChange(e)} required/>
                     </label> 
                     <label htmlFor="title">
                         Artwork Title:
@@ -119,7 +112,9 @@ class UploadArtwork extends Component {
                     </label>
                     <label htmlFor="description">
                         Artwork Description: 
-                        <input id="description" name="description" type="text" placeholder="description" onChange={e => this.onDescriptionChange(e)} required/>
+                        <input id="description" name="description" type="text" 
+                        className="description"
+                        placeholder="description" onChange={e => this.onDescriptionChange(e)} required/>
                     </label>
                     <button type="submit" className="submit">Upload Artwork</button>
                 </form>

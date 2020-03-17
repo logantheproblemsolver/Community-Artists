@@ -1,5 +1,7 @@
 .showArtwork {
     display: grid;
+    grid-template-columns: 45% 45%;
+    grid-template-columns: repeat(2, 1f);
     width: 100%;
     margin-bottom: 35px;
     margin-top: 50px;
@@ -16,12 +18,10 @@
     max-width: 500px;
 }
 
-.artwork {
-    display: grid;
-}
 
 .artworkImageSection {
     text-align: center;
+    font-weight: bolder;
 }
 
 

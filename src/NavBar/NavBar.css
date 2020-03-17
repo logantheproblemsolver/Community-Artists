@@ -2,7 +2,7 @@
     nav {
     display: flex;
     flex-direction: row;
-    background-color: gray;
+    background-color: #94B7AF;
     border-bottom: solid 1px black;
     align-items: center;
     width: 100%;
@@ -28,7 +28,7 @@
         top: 4.95em;
         right: 1em;
         list-style: none;
-        background-color: gray;
+        background-color: #94B7AF;
         padding-left: 1em;
         padding-right: 1em;
         margin: unset;
@@ -50,7 +50,7 @@
     }
 
     nav a:visited {
-        color: red;
+        color: black;
     }
 
 }

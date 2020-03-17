@@ -10,7 +10,7 @@ import './App.css';
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <div className="mainApp">
         <NavBar />
         <Route exact path="/" component={LandingPage} />
         <Route exact path="/UploadArtwork" component={UploadArtwork} />

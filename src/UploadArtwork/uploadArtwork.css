@@ -15,13 +15,23 @@ form {
     margin-bottom: 5em;
 }
 
+form label {
+    font-weight: bold;
+}
+
 form input {
     margin-bottom: 1em;
-    border: solid 1px black;
+    border: solid 1px gray;
     margin-left: .5em;
 }
 
 form button {
     width: auto;
     margin-bottom: 20px;
+}
+
+
+.description {
+    width: 200px;
+    height:100px;
 }
