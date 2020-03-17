@@ -83,8 +83,9 @@ class UploadArtwork extends Component {
                   return res.json()
             })
             .then(data => {
-                alert("The file is successfully uploaded");
-                console.log(data)
+                this.setState({
+                    error: 'You have successfully uploaded an image!'
+                })
             })
             .catch(error => {
                 this.setState({

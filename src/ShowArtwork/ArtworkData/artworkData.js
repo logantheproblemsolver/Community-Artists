@@ -10,7 +10,7 @@ class ArtworkData extends Component {
         const artwork = this.props.artworkdata.map((artwork, i) => { 
 
             return (
-                <div key={i}>
+                <div className="artworkImageSection" key={i}>
                     <img src={artwork.image} alt="artist's artwork" className="artworkImages"/>
                     <p>{artwork.title}</p>
                     <p>{artwork.artist_name}</p>
@@ -21,7 +21,7 @@ class ArtworkData extends Component {
         )
         })
         return (
-            <div>
+            <div className="artwork">
                 {artwork}
             </div>
         )
