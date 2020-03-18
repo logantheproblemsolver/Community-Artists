@@ -36,3 +36,12 @@ form button {
     width: 200px;
     height:100px;
 }
+
+
+.status {
+    font-size: 1.5em;
+    height: 1.2em;
+    font-weight: bolder;
+    position: absolute;
+    right: 33%;
+}

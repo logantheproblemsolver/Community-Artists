@@ -13,7 +13,7 @@ class UploadArtwork extends Component {
             name: '', 
             price: '$0', 
             description: '',
-            error: null,
+            status: null,
         }
     }
 
@@ -68,20 +68,18 @@ class UploadArtwork extends Component {
 
         axios.post(url, formData, request)
             .then(res => {
-                if (!res.ok) {
-                    return res.json().then(error => Promise.reject(error))
-                  }
-                  return res.json()
+                if (res.statusText !== 'OK') {
+                    return res.status
+                }
+                return res.data
             })
             .then(data => {
                 this.setState({
-                    error: 'You have successfully uploaded an image!'
+                    status: 'You have successfully uploaded an image! 🎉'
                 })
             })
             .catch(error => {
-                this.setState({
-                    error: error
-                })
+                alert(error)
         });
     }
 
@@ -89,8 +87,8 @@ class UploadArtwork extends Component {
     render() {
         return (
             <div className="uploadArtwork">
-                <div className="error">
-                    {this.state.error}
+                <div className="status">
+                    {this.state.status}
                 </div>
                 <form className="form" id="form" onSubmit={e => this.onSubmit(e)} >
                     <label htmlFor="image"> Choose Image: 
