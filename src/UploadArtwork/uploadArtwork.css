@@ -2,39 +2,50 @@
     font-family: 'Ubuntu', sans-serif;
     display: flex;
     justify-content: center;
-    align-content: center;
     height: auto;
+    margin-bottom: 10em;
 }
 
 
 form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     margin-top: 5em;
     margin-bottom: 5em;
+    font-size: 1.5em;
 }
 
 form label {
     font-weight: bold;
+    padding-bottom: 1em;
 }
 
-form input {
+form input, form textarea {
     margin-bottom: 1em;
     border: solid 1px gray;
     margin-left: .5em;
+    border-radius: 5%;
+    border: 1px solid black;
 }
 
 form button {
-    width: auto;
+    width: 8em;
     margin-bottom: 20px;
+    margin-top: 20px;
+    height: 3em;
+    border-radius: 50%;
+    background: rgb(238, 185, 227);
+    box-shadow: 1px 1px 1em black;
 }
 
 
 .description {
     width: 200px;
-    height:100px;
+    height: 75px;
+    margin-left: .5em;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 
@@ -44,4 +55,11 @@ form button {
     font-weight: bolder;
     position: absolute;
     right: 33%;
+    margin-top: 1.3em;
+}
+
+.textAreaLabel {
+    display: inline-block;
+    vertical-align: middle;
+    
 }

@@ -8,8 +8,10 @@
         height: 5em;
         background-color: #7C858E;
         justify-content: center;
-        position: relative;
+        /* position:absolute;
+        left:0;
         bottom: 0;
+        right:0; */
     }
 
     .footerLabel {

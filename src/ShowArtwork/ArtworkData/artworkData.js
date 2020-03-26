@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 
 
-
+// In this component the sole focus is to digest and output data from showArtwork's API request. Since the data comes to us as a JSON format we just map over it and use dot notation to specify data
 
 class ArtworkData extends Component {
     render() {

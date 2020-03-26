@@ -1,14 +1,9 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-
-import App from './App';
+import Footer from './Footer';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDom.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>, div);
+  ReactDom.render(<Footer />, div);
   ReactDom.unmountComponentAtNode(div);
 });

@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './notFound.css';
 
-
+// this page is a not found page in case a user tries to go to a page that doesn't exist. Later down the road I would like to add a funny image to it to make it more lively
 class NotFound extends Component {
     render() {
         return (
@@ -13,7 +13,7 @@ class NotFound extends Component {
                 </p>
             </div>
         )
-    }
-} 
+    };
+}; 
 
-export default NotFound
+export default NotFound;

@@ -2,6 +2,12 @@
     *{
         padding: 0;
     }
+
+    .showArtwork {
+        margin-bottom: 5em;
+        margin-top: 2em;
+    }
+
     .artwork {
         display: grid;
         font-family: 'Ubuntu', sans-serif;

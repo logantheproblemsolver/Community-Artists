@@ -3,7 +3,7 @@ import config from '../config'
 import axios from 'axios'
 import './uploadArtwork.css'
 
-
+// This component is handling the uploads of the artwork
 class UploadArtwork extends Component {
     constructor(props) {
         super(props)
@@ -66,6 +66,8 @@ class UploadArtwork extends Component {
         };
         const url = config.API_ENDPOINT + '/uploadArtwork'
 
+// I am using axios so I can efficiently send form data with an image back to the server
+
         axios.post(url, formData, request)
             .then(res => {
                 if (res.statusText !== 'OK') {
@@ -77,13 +79,14 @@ class UploadArtwork extends Component {
                 this.setState({
                     status: 'You have successfully uploaded an image! 🎉'
                 })
+                document.getElementById('form').reset();
             })
             .catch(error => {
                 alert(error)
         });
     }
 
-
+// Here is the form that collects the data
     render() {
         return (
             <div className="uploadArtwork">
@@ -108,11 +111,16 @@ class UploadArtwork extends Component {
                         Artwork Price: 
                         <input type="number" name="price" placeholder="$100" onChange={e => this.onPriceChange(e)} />
                     </label>
-                    <label htmlFor="description">
+                    <label htmlFor="description" className="textAreaLabel">
                         Artwork Description: 
-                        <input id="description" name="description" type="text" 
+                        <textarea 
+                        id="description" 
+                        name="description"  
                         className="description"
-                        placeholder="description" onChange={e => this.onDescriptionChange(e)} required/>
+                        placeholder="description" 
+                        onChange={e => this.onDescriptionChange(e)} 
+                        required
+                        />
                     </label>
                     <button type="submit" className="submit">Upload Artwork</button>
                 </form>

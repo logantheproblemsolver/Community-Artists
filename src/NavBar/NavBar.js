@@ -26,7 +26,7 @@ class NavBar extends Component {
         
         const {showList} = this.state
 
-        
+        // This navigation is so it's easier to navigate pages, and also it can be scaleable or resuable 
         return (
             <nav className="navigation">
                 <h1 className="title left"><Link to="/">Community Artists</Link></h1>

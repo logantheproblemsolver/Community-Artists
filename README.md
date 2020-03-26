@@ -1,3 +1,7 @@
+<h1>Community Artist App</h1>
+
+https://community-artist-app.now.sh/
+
 This front-end is put together using React
 
 

@@ -1,18 +1,15 @@
 import React, {Component} from 'react';
 import './Footer.css';
 
+// This is the footer, later down the road I plan on adding a place to send your email to start collecting emails
 class Footer extends Component {
     render() {
         return (
             <div className="footer">
-                {/* <label htmlFor="Email" className="footerLabel">
-                    Enter your email address to be a part of our community! <br /> 
-                    <input className="footerInput" type="email" placeholder="Enter Email Address" name="Email" />
-                    <button type="submit">Submit Email</button>
-                </label> */}
+                
             </div>
-        )
-    }
-}
+        );
+    };
+};
 
 export default Footer;

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './LandingPage.css'
 
-
+// This is the landing page to talk about what the Community Artist website does and why it does it
 class LandingPage extends Component {
     render() {
         return (
@@ -13,9 +13,9 @@ class LandingPage extends Component {
                     Feel free to browse the uploaded  artwork or upload your own work!
                 </p>
             </div>
-        )
-    }
-}
+        );
+    };
+};
 
 
 export default LandingPage;
