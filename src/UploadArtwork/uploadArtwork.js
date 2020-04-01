@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import config from '../config'
-import axios from 'axios'
+import config from '../config';
+import axios from 'axios';
 import './uploadArtwork.css'
 
 // This component is handling the uploads of the artwork
@@ -15,6 +15,11 @@ class UploadArtwork extends Component {
             description: '',
             status: null,
         }
+    }
+
+    clearForm = () => {
+        document.getElementById('form').reset();
+
     }
 
     onImageChange = image => {
@@ -86,6 +91,8 @@ class UploadArtwork extends Component {
         });
     }
 
+    
+
 // Here is the form that collects the data
     render() {
         return (
@@ -94,35 +101,77 @@ class UploadArtwork extends Component {
                     {this.state.status}
                 </div>
                 <form className="form" id="form" onSubmit={e => this.onSubmit(e)} >
-                    <label htmlFor="image"> Choose Image: 
-                    <input type="file" name="image" 
-                    accept="image/*"
-                    onChange={e => this.onImageChange(e)} required/>
-                    </label> 
+                    <label htmlFor="image"> Choose Image  </label>
+                    <input 
+                        type="file" 
+                        name="image" 
+                        id="uploadImage"
+                        accept="image/*"
+                        onChange={e => this.onImageChange(e)} 
+                        required
+                    />
+                  
                     <label htmlFor="title">
-                        Artwork Title:
-                        <input type="text" name="title" placeholder="Title" onChange={e => this.onTitleChange(e)} value={this.state.title} required />
+                        Artwork Title
                     </label>            
+                    <input 
+                        type="text" 
+                        name="title" 
+                        placeholder="Title"
+                        id="title" 
+                        onChange={e => this.onTitleChange(e)} 
+                        value={this.state.title} 
+                        required 
+                    />
                     <label htmlFor="artist_name">
-                        Artist Name: 
-                        <input type="text" name="artist_name" placeholder="Billy Bob" onChange={e => this.onNameChange(e)} /> 
+                        Artist Name
                     </label>
+                    <input 
+                        type="text" 
+                        name="artist_name" 
+                        id="artistName"
+                        placeholder="Billy Bob" 
+                        onChange={e => this.onNameChange(e)} 
+                    /> 
                     <label htmlFor="price">
-                        Artwork Price: 
-                        <input type="number" name="price" placeholder="$100" onChange={e => this.onPriceChange(e)} />
+                        Artwork Price
                     </label>
+                    <input 
+                        type="number" 
+                        name="price" 
+                        placeholder="$100" 
+                        id="price"
+                        onChange={e => this.onPriceChange(e)} 
+                    />
                     <label htmlFor="description" className="textAreaLabel">
-                        Artwork Description: 
-                        <textarea 
+                        Artwork Description
+                    </label>
+                    <textarea 
                         id="description" 
                         name="description"  
-                        className="description"
                         placeholder="description" 
                         onChange={e => this.onDescriptionChange(e)} 
                         required
-                        />
-                    </label>
-                    <button type="submit" className="submit">Upload Artwork</button>
+                    />
+                    <div className="buttons">
+                        <button 
+                        type="submit" 
+                        className="submit"
+                        variant="contained"
+                        color="primary"
+                        >
+                            Upload
+                        </button>
+                        <button 
+                        className="cancel"
+                        variant="contained"
+                        color="secondary"
+                        onClick={this.clearForm}
+                        >
+                            Cancel
+                        </button>
+                    </div>
+
                 </form>
             </div>
         )

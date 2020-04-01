@@ -1,53 +1,55 @@
 .uploadArtwork {
     font-family: 'Ubuntu', sans-serif;
-    display: flex;
     justify-content: center;
     height: auto;
     margin-bottom: 10em;
+    margin-top: 5em;
 }
-
 
 form {
     display: flex;
     flex-direction: column;
-    align-items: center;
     margin-top: 5em;
     margin-bottom: 5em;
     font-size: 1.5em;
+    width: 10em;
+    margin: auto auto;
 }
 
 form label {
     font-weight: bold;
-    padding-bottom: 1em;
+    padding-top: 1em;
 }
 
 form input, form textarea {
     margin-bottom: 1em;
-    border: solid 1px gray;
-    margin-left: .5em;
-    border-radius: 5%;
-    border: 1px solid black;
+    border-style: unset; 
+    background-color: rgb(219, 219, 219);
+    width: 20em;
+
 }
 
-form button {
-    width: 8em;
-    margin-bottom: 20px;
-    margin-top: 20px;
+form input {
+    height: 2em;
+}
+
+.submit, .cancel {
+    width: 6em;
     height: 3em;
-    border-radius: 50%;
-    background: rgb(238, 185, 227);
-    box-shadow: 1px 1px 1em black;
+    font-weight: bolder;
+    border-radius: 10%;
+    border-style: unset;
+    cursor: pointer;
 }
 
-
-.description {
-    width: 200px;
-    height: 75px;
-    margin-left: .5em;
-    display: inline-block;
-    vertical-align: middle;
+.submit {
+    background-color: #a3b0cf;
 }
 
+.cancel {
+    background-color: #f4ac90;
+    margin-left: 2em;
+}
 
 .status {
     font-size: 1.5em;
@@ -58,8 +60,13 @@ form button {
     margin-top: 1.3em;
 }
 
-.textAreaLabel {
-    display: inline-block;
-    vertical-align: middle;
-    
+#uploadImage {
+    height: unset;
 }
+
+
+#description {
+    width: 20em;
+    height: 75px;
+}
+
